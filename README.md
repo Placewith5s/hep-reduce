@@ -2,7 +2,7 @@
 - A module for Roblox Studio to reduce coding repetitiveness.
 
 ## Installation
-[hep_reduce.rbxm](https://github.com/Placewith5s/hep_reduce/releases/download/0.1.0/hep_reduce.rbxm)
+[hep_reduce.rbxm](https://github.com/Placewith5s/hep_reduce/releases/download/0.1.1/hep_reduce.rbxm)
 
 ## Usage
 ```lua
