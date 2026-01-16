@@ -22,3 +22,6 @@ print("Here before 3 seconds!")
 
 ## Documentation
 - LuaDoc
+
+## Contribution
+[CONTRIBUTE.md](CONTRIBUTE.md)
