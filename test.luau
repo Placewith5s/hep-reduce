@@ -1,4 +1,4 @@
-local hep_reduce = require("./hep_reduce")
+local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
 local test_gui: ScreenGui = game.StarterGui:WaitForChild("test_gui", 10)
 local test_btn: TextButton = test_gui and test_gui:FindFirstChild("test_btn") :: TextButton
