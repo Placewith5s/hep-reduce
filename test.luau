@@ -1,15 +1,14 @@
+--!strict
 local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
-local test_gui: ScreenGui = game.StarterGui:WaitForChild("test_gui", 10)
+local test_gui: ScreenGui = script.Parent
 local test_btn: TextButton = test_gui and test_gui:FindFirstChild("test_btn") :: TextButton
 
-local debounce: boolean = false
+local debounce = hep_reduce.debouncer(2)
 
 
 local function debounced_click()
-    print("Click")
-    debounce = hep_reduce.debouncer(debounce, 0.3)
-    print("Debounced the click")
+	if debounce() then print("Debounced the click") end
 end
 
 test_btn.Activated:Connect(debounced_click)
