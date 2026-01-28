@@ -20,6 +20,9 @@ hep_reduce.wait_async(3)
 print("Here before 3 seconds!")
 ```
 
+[Client example usage](./client_test.luau)
+[Server example usage](./server_test.luau)
+
 ## Documentation
 - LuaDoc
 
