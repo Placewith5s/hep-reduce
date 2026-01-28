@@ -29,9 +29,10 @@ function checks.invalid_num(num: number)
 end
 
 function checks.invalid_service(service_name: string)
-	local service: Instance = game:GetService(service_name)
+	local service: Instance | nil = game:GetService(service_name)
+	local is_service: boolean | nil = service and service:IsA("Instance")
 
-	if (not service:IsA("Instance") or not service) then
+	if (service == nil or not is_service) then
 		error(service_name .. " isn't available or is invalid!")
 	end
 end

@@ -125,32 +125,22 @@ end
 
 function hep_reduce.is_zero_or_lower(num: number): boolean
 	checks.invalid_num(num)
-	
-	if num <= 0 then
-		return true
-	end
-
-	return false
+	return num <= 0
 end
 
 function hep_reduce.is_nan(num: number): boolean
 	checks.invalid_num(num)
-	
-	if num ~= num then
-		return true
-	end
-	
-	return false
+	return num ~= num
 end
 
 function hep_reduce.is_empty_str(str_to_check: string): boolean
 	checks.invalid_str(str_to_check)
+	return not str_to_check:find("%S")
+end
 
-	if str_to_check == "" then
-		return true
-	end
-
-	return false
+function hep_reduce.is_empty_str_no_trim(str_to_check: string): boolean
+	checks.invalid_str(str_to_check)
+	return str_to_check == ""
 end
 
 function hep_reduce.is_empty_table(table_to_check: {[any]: any}): boolean
