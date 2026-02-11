@@ -4,6 +4,18 @@ local checks = {}
 type What = "Head" | "Humanoid" | "HumanoidRootPart"
 
 
+function checks.client_only()
+	if game["Run Service"]:IsServer() then
+		error("Client only usage detected!")
+	end
+end
+
+function checks.server_only()
+	if game["Run Service"]:IsClient() then
+		error("Server only usage detected!")
+	end
+end
+
 function checks.already_exists(parent, what: string)
 	if parent then
 		error(what .. "already exists!")
@@ -25,15 +37,6 @@ end
 function checks.invalid_num(num: number)
 	if (type(num) ~= "number" or not num) then
 		error("Invalid number!")
-	end
-end
-
-function checks.invalid_service(service_name: string)
-	local service: Instance | nil = game:GetService(service_name)
-	local is_service: boolean | nil = service and service:IsA("Instance")
-
-	if (service == nil or not is_service) then
-		error(service_name .. " isn't available or is invalid!")
 	end
 end
 

@@ -5,39 +5,62 @@ local checks = require(script:WaitForChild("checks"))
 local gets = require(script:WaitForChild("gets"))
 
 
+local function create_instance(class_name: string, name: string | nil, parent)
+	local new_instance = Instance.new(class_name)
+	new_instance.Name = name or class_name
+	new_instance.Parent = parent
+	return new_instance
+end
+
+-- @param parent - defaults to SoundService
+-- NOTE: Also checks if name is invalid
+function hep_reduce.create_regular_audio_player(
+	name: string, asset_id: number, parent: Instance | SoundService): AudioPlayer
+	checks.invalid_str(name)
+	
+	local regular_audio_player: AudioPlayer = create_instance(
+		"AudioPlayer", name, parent or game.SoundService)
+	regular_audio_player.Asset = "rbxassetid://" .. asset_id
+	
+	local audio_device_output: AudioDeviceOutput = create_instance(
+		"AudioDeviceOutput", nil, regular_audio_player)
+	
+	local wire: Wire = create_instance("Wire", nil, regular_audio_player)
+	wire.SourceInstance = regular_audio_player
+	wire.TargetInstance = audio_device_output
+
+	return regular_audio_player
+end
+
 -- (SERVER ONLY)
-function hep_reduce.create_leaderstats(parent: Player)
-	checks.invalid_service("DataStoreService")
+-- NOTE: Also checks if parent is invalid
+function hep_reduce.create_leaderstats(parent: Player): Folder
+	checks.server_only()
 	checks.invalid_parent(parent)
 
 	local leaderstats_found: Folder | nil = parent:FindFirstChild("leaderstats") :: Folder | nil
 
 	checks.already_exists(leaderstats_found, "Leaderstats")
 
-	local leaderstats = Instance.new("Folder")
-	leaderstats.Name = "leaderstats"
-	leaderstats.Parent = parent
-
+	local leaderstats: Folder = create_instance("Folder", "leaderstats", parent)
+	
 	return leaderstats
 end
 
 -- (SERVER ONLY)
-function hep_reduce.new_leaderstat(stat_name: string, inst_name: string, value, parent: Folder)
-	checks.invalid_service("DataStoreService")
+-- NOTE: Also checks if parent is invalid
+function hep_reduce.create_leaderstat(class_name: string, stat_name: string, value, parent: Folder)
+	checks.server_only()
 	checks.invalid_parent(parent)
 
-	local new_stat: ValueBase = Instance.new(stat_name)
-	new_stat.Name = inst_name
+	local new_stat: ValueBase = create_instance("ValueBase", stat_name, parent)
 	new_stat.Value = value
-	new_stat.Parent = parent
 
 	return new_stat
 end
 
-
--- (CLIENT ONLY)
--- @usage local debounce = hep_reduce.debouncer(0.3) if debounce() then print("Debounced") end
-function hep_reduce.debouncer(duration: number): () -> boolean
+-- @usage local debounce = hep_reduce.create_debounce(0.3) if debounce() then print("Debounced") end
+function hep_reduce.create_debounce(duration: number): () -> boolean
 	local debounce: boolean = false
 
 	return function(): boolean
@@ -53,8 +76,10 @@ function hep_reduce.debouncer(duration: number): () -> boolean
 end
 
 -- (SERVER ONLY)
--- @usage local debounce = hep_reduce.plr_debouncer(0.3) if debounce() then print("Debounced") end
-function hep_reduce.plr_debouncer(player: Player, duration: number): (player: Player) -> boolean
+-- @usage local plr_debounce = hep_reduce.create_plr_debounce(0.3) if plr_debounce() then print("Debounced") end
+function hep_reduce.create_plr_debounce(duration: number): (player: Player) -> boolean
+	checks.server_only()
+	
 	local debounce: {[Player]: boolean} = {}
 
 	return function(player: Player): boolean
@@ -73,6 +98,8 @@ end
 -- Disables character respawn at all times
 -- @param MAX_RETRIES - default is 8
 function hep_reduce.disable_char_respawn(MAX_RETRIES: number | nil)
+	checks.client_only()
+	
 	local function core_call(method, ...)
 		local CHOICE: number = MAX_RETRIES or 8
 
@@ -94,7 +121,7 @@ function hep_reduce.disable_char_respawn(MAX_RETRIES: number | nil)
 end
 
 -- Get the model's "Head" using its character
--- @usage hep_reduce.get_head(char)
+-- NOTE: Also checks if character is invalid
 function hep_reduce.get_head(char: Model): BasePart
 	checks.invalid_char(char)
 	local head: BasePart | nil = gets.get_char_instance(char, "Head") :: BasePart | nil
@@ -104,7 +131,7 @@ function hep_reduce.get_head(char: Model): BasePart
 end
 
 -- Get the model's "HumanoidRootPart" using its character
--- @usage hep_reduce.get_hrp(char)
+-- NOTE: Also checks if HumanoidRootPart is invalid
 function hep_reduce.get_hrp(char: Model): BasePart
 	checks.invalid_char(char)
 	local hrp: BasePart | nil = gets.get_char_instance(char, "HumanoidRootPart") :: BasePart | nil
@@ -114,7 +141,7 @@ function hep_reduce.get_hrp(char: Model): BasePart
 end
 
 -- Get the model's "Humanoid" using its character
--- @usage hep_reduce.get_hum(char)
+-- NOTE: Also checks if Humanoid is invalid
 function hep_reduce.get_hum(char: Model): Humanoid
 	checks.invalid_char(char)
 	local hum: Humanoid | nil = gets.get_char_instance(char, "Humanoid") :: Humanoid | nil
@@ -123,26 +150,50 @@ function hep_reduce.get_hum(char: Model): Humanoid
 	return hum :: Humanoid
 end
 
-function hep_reduce.is_zero_or_lower(num: number): boolean
+function hep_reduce.init_instance_list(container: Instance)
+	local storage: {Instance} = {}
+	
+	for _, key in container:GetChildren() do
+		table.insert(storage, key)
+	end
+	
+	return storage
+end
+
+-- NOTE: Also checks if table is invalid
+function hep_reduce.get_random_instance(storage: {Instance?})
+	checks.invalid_table(storage)
+	
+	local chosen_num: number = math.random(1, #storage)
+	local chosen_key = storage[chosen_num]
+	return chosen_key
+end
+
+-- NOTE: Also checks if number is invalid
+function hep_reduce.is_non_positive(num: number): boolean
 	checks.invalid_num(num)
 	return num <= 0
 end
 
+-- NOTE: Also checks if number is invalid
 function hep_reduce.is_nan(num: number): boolean
 	checks.invalid_num(num)
 	return num ~= num
 end
 
+-- NOTE: Also checks if string is invalid
 function hep_reduce.is_empty_str(str_to_check: string): boolean
 	checks.invalid_str(str_to_check)
 	return not str_to_check:find("%S")
 end
 
+-- NOTE: Also checks if string is invalid
 function hep_reduce.is_empty_str_no_trim(str_to_check: string): boolean
 	checks.invalid_str(str_to_check)
 	return str_to_check == ""
 end
 
+-- NOTE: Also checks if table is invalid
 function hep_reduce.is_empty_table(table_to_check: {[any]: any}): boolean
 	checks.invalid_table(table_to_check)
 	return next(table_to_check) == nil
@@ -150,8 +201,8 @@ end
 
 -- @param seconds - setting it to 0 will default to RunService.Heartbeat:Wait()
 -- @return - the thread for cleanup / debugging purposes
--- @usage hep_reduce.wait_async(3)
-function hep_reduce.wait_async(seconds: number): thread?
+-- NOTE: Also checks if number or thread is invalid
+function hep_reduce.schedule(seconds: number): thread?
 	local invalid_seconds: number | nil = checks.invalid_seconds(seconds)
 
 	local thread: thread | nil = nil

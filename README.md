@@ -9,19 +9,17 @@
 --!strict
 local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
+hep_reduce.create_regular_audio_player("test_audio", 1234567890)
+
 game.Players.PlayerAdded:Wait() -- studio's poop break :)
 
+local possible_parts = hep_reduce.init_instance_list(workspace.Test_Folder)
 
-local function test_wait_async()
-	print("Hello from async serial!")
-end
-
-hep_reduce.wait_async(3)
+hep_reduce.schedule(3)
 print("Here before 3 seconds!")
-```
 
-- [Client example usage](./client_test.luau)
-- [Server example usage](./server_test.luau)
+local chosen_part = hep_reduce.get_random_instance(storage)
+```
 
 ## Documentation
 - LuaDoc
