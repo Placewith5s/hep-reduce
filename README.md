@@ -5,7 +5,7 @@
 [hep_reduce.rbxm](https://github.com/Placewith5s/hep_reduce/releases)
 
 ## Usage
-```lua
+```luau
 --!strict
 local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
@@ -22,7 +22,7 @@ local chosen_part = hep_reduce.get_random_instance(possible_parts)
 ```
 
 ## Documentation
-- LuaDoc
+- LDoc
 
 ## Contribution
 [CONTRIBUTE.md](CONTRIBUTE.md)

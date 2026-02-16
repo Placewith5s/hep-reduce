@@ -12,28 +12,31 @@ local function create_instance(class_name: string, name: string | nil, parent: I
 	return new_instance
 end
 
+--- Creates a regular "AudioPlayer" instance similarly to a regular "Sound" instance
 -- @param parent - defaults to SoundService
 -- NOTE: Also checks if provided name is invalid
 function hep_reduce.create_regular_audio_player(
 	name: string, asset_id: number, parent: Instance | SoundService): AudioPlayer
 	checks.invalid_str(name)
-	
+
 	local regular_audio_player: AudioPlayer = create_instance(
 		"AudioPlayer", name, parent or game.SoundService)
 	regular_audio_player.Asset = "rbxassetid://" .. asset_id
-	
+
 	local audio_device_output: AudioDeviceOutput = create_instance(
 		"AudioDeviceOutput", nil, regular_audio_player)
-	
+
 	local wire: Wire = create_instance("Wire", nil, regular_audio_player)
 	wire.SourceInstance = regular_audio_player
 	wire.TargetInstance = audio_device_output
-	
+
 	return regular_audio_player
 end
 
+--- Creates "leaderstats" aka leaderboard
 -- (SERVER ONLY)
 -- NOTE: Also checks if provided parent is invalid
+-- NOTE: Errors, If "leaderstats" already exists
 function hep_reduce.create_leaderstats(parent: Player): Folder
 	checks.server_only()
 	checks.invalid_parent(parent)
@@ -43,11 +46,13 @@ function hep_reduce.create_leaderstats(parent: Player): Folder
 	checks.already_exists(leaderstats_found, "Leaderstats")
 
 	local leaderstats: Folder = create_instance("Folder", "leaderstats", parent)
-	
+
 	return leaderstats
 end
 
 -- (SERVER ONLY)
+--- Creates a leaderstat (leaderboard stat)
+-- @usage hep_reduce.create_leaderstat("IntValue", "Money", 0, leaderstats)
 -- NOTE: Also checks if provided parent is invalid
 function hep_reduce.create_leaderstat(class_name: string, stat_name: string, value, parent: Folder)
 	checks.server_only()
@@ -79,7 +84,7 @@ end
 -- @usage local plr_debounce = hep_reduce.create_plr_debounce(0.3) if plr_debounce() then print("Debounced") end
 function hep_reduce.create_plr_debounce(duration: number): (player: Player) -> boolean
 	checks.server_only()
-	
+
 	local debounce: {[Player]: boolean} = {}
 
 	return function(player: Player): boolean
@@ -99,7 +104,7 @@ end
 -- @param MAX_RETRIES - default is 8
 function hep_reduce.disable_char_respawn(MAX_RETRIES: number | nil)
 	checks.client_only()
-	
+
 	local function core_call(method, ...)
 		local CHOICE: number = MAX_RETRIES or 8
 
@@ -120,7 +125,7 @@ function hep_reduce.disable_char_respawn(MAX_RETRIES: number | nil)
 	core_call('SetCore', 'ResetButtonCallback', false)
 end
 
--- Get the model's "Head" using its character
+--- Get the model's "Head" using its character
 -- NOTE: Also checks if provided character is invalid
 function hep_reduce.get_head(char: Model): BasePart
 	checks.invalid_char(char)
@@ -130,7 +135,7 @@ function hep_reduce.get_head(char: Model): BasePart
 	return head :: BasePart
 end
 
--- Get the model's "HumanoidRootPart" using its character
+--- Get the model's "HumanoidRootPart" using its character
 -- NOTE: Also checks if provided "HumanoidRootPart" is invalid
 function hep_reduce.get_hrp(char: Model): BasePart
 	checks.invalid_char(char)
@@ -140,7 +145,7 @@ function hep_reduce.get_hrp(char: Model): BasePart
 	return hrp :: BasePart
 end
 
--- Get the model's "Humanoid" using its character
+--- Get the model's "Humanoid" using its character
 -- NOTE: Also checks if provided "Humanoid" is invalid
 function hep_reduce.get_hum(char: Model): Humanoid
 	checks.invalid_char(char)
@@ -150,30 +155,31 @@ function hep_reduce.get_hum(char: Model): Humanoid
 	return hum :: Humanoid
 end
 
--- Get the model's "Torso" using its character
+--- Get the model's "Torso" using its character
 -- NOTE: Also checks if provided "Torso" is invalid
 function hep_reduce.get_torso(char: Model): BasePart
 	checks.invalid_char(char)
-	local hum: BasePart | nil = gets.get_char_instance(char, "Torso") :: BasePart | nil
-	checks.invalid_char_child_inst(hum, "Torso")
+	local torso: BasePart | nil = gets.get_char_instance(char, "Torso") :: BasePart | nil
+	checks.invalid_char_child_inst(torso, "Torso")
 
-	return hum :: BasePart
+	return torso :: BasePart
 end
 
+--- Initialize an instance table using its container
 function hep_reduce.init_instance_list(container: Instance?)
 	local storage: {Instance?} = {}
-	
+
 	for _, key in container:GetChildren() do
 		table.insert(storage, key)
 	end
-	
+
 	return storage
 end
 
 -- NOTE: Also checks if provided table is invalid
 function hep_reduce.get_random_instance(storage: {Instance?})
 	checks.invalid_table(storage)
-	
+
 	local chosen_num: number = math.random(1, #storage)
 	local chosen_key = storage[chosen_num]
 	return chosen_key
@@ -209,14 +215,16 @@ function hep_reduce.is_empty_table(table_to_check: {[any]: any}): boolean
 	return next(table_to_check) == nil
 end
 
+-- @usage hep_reduce.magnitude(player_hrp, npc_hrp)
 -- NOTE: Also checks if any provided "HumanoidRootPart" is invalid
 function hep_reduce.magnitude(hrp_1: BasePart, hrp_2: BasePart)
 	local hrps: {BasePart?} = {hrp_1, hrp_2}
 	checks.invalid_char_child_instances(hrps, "HumanoidRootPart")
-	
+
 	return (hrp_1.Position - hrp_2.Position).Magnitude
 end
 
+-- @usage hep_reduce.unit(player_hrp, npc_hrp, 50)
 -- NOTE: Also checks if any provided "HumanoidRootPart" is invalid
 function hep_reduce.unit(hrp_1: BasePart, hrp_2: BasePart, multiplied_value: number)
 	local hrps: {BasePart?} = {hrp_1, hrp_2}
@@ -242,6 +250,45 @@ function hep_reduce.schedule(seconds: number): thread?
 	checks.invalid_thread(thread)
 
 	return thread
+end
+
+--- Retry a function on failure until limit is reached
+-- Returns whether its successful or not
+-- Inspired by the retry decorator
+function hep_reduce.retry(max_attempts: number, func: () -> ()): boolean
+	local retries: number = 0
+
+	while retries < max_attempts do
+		local success: boolean, err = pcall(func)
+
+		if not success then
+			retries += 1
+			task.wait()
+		else
+			return true
+		end
+	end
+
+	return false
+end
+
+--- Timeout a function that isn't finished yet within a certain amount of time
+-- NOTE: Errors, on function timeout
+-- Inspired by the timeout decorator
+function hep_reduce.timeout(seconds: number, err_msg: string, func: () -> ())
+	local canceled: boolean = false
+
+	task.wait(seconds)
+
+	if not canceled then
+		error(err_msg)
+	end
+
+	local success: boolean, err = pcall(func)
+
+	if success then
+		canceled = true
+	end
 end
 
 return hep_reduce
