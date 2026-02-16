@@ -18,7 +18,7 @@ local possible_parts = hep_reduce.init_instance_list(workspace.Test_Folder)
 hep_reduce.schedule(3)
 print("Here before 3 seconds!")
 
-local chosen_part = hep_reduce.get_random_instance(storage)
+local chosen_part = hep_reduce.get_random_instance(possible_parts)
 ```
 
 ## Documentation
