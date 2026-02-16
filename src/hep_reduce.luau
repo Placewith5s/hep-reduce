@@ -5,7 +5,7 @@ local checks = require(script:WaitForChild("checks"))
 local gets = require(script:WaitForChild("gets"))
 
 
-local function create_instance(class_name: string, name: string | nil, parent)
+local function create_instance(class_name: string, name: string | nil, parent: Instance?)
 	local new_instance = Instance.new(class_name)
 	new_instance.Name = name or class_name
 	new_instance.Parent = parent
@@ -160,8 +160,8 @@ function hep_reduce.get_torso(char: Model): BasePart
 	return hum :: BasePart
 end
 
-function hep_reduce.init_instance_list(container: Instance)
-	local storage: {Instance} = {}
+function hep_reduce.init_instance_list(container: Instance?)
+	local storage: {Instance?} = {}
 	
 	for _, key in container:GetChildren() do
 		table.insert(storage, key)

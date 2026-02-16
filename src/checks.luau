@@ -16,7 +16,7 @@ function checks.server_only()
 	end
 end
 
-function checks.already_exists(parent, what: string)
+function checks.already_exists(parent: Instance?, what: string)
 	if parent then
 		error(what .. "already exists!")
 	end
@@ -58,7 +58,7 @@ function checks.invalid_str(str: string)
 	end
 end
 
-function checks.invalid_parent(parent)
+function checks.invalid_parent(parent: Instance?)
 	if not parent then
 		error("Invalid parent provided!")
 	end
