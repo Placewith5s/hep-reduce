@@ -1,7 +1,7 @@
 --!strict
 local checks = {}
 
-type What = "Head" | "Humanoid" | "HumanoidRootPart"
+type Char_Child_Name = "Head" | "Humanoid" | "HumanoidRootPart" | "Torso"
 
 
 function checks.client_only()
@@ -28,21 +28,33 @@ function checks.invalid_char(char: Model)
 	end
 end
 
-function checks.invalid_char_inst(char_inst, char_name: string, what: What)
-	if not char_inst then
-		error("Couldn't get" .. what .. "for " .. char_name .. "!")
+function checks.invalid_char_child_inst(char_child_inst: BasePart? | Humanoid?, what: Char_Child_Name)
+	if not char_child_inst then
+		error("Invalid " .. what .. "!")
+	end
+	
+	if char_child_inst.Name ~= what then
+		error("Invalid " .. what .. "!" .. " Got " .. char_child_inst.Name)
+	end
+end
+
+function checks.invalid_char_child_instances(char_child_instances: {BasePart?} | {Humanoid?}, what: Char_Child_Name)
+	for _, char_child_inst in char_child_instances do
+		if char_child_inst.Name ~= what then
+			error("Invalid " .. what .. "!" .. " Got " .. char_child_inst.Name)
+		end
 	end
 end
 
 function checks.invalid_num(num: number)
 	if (type(num) ~= "number" or not num) then
-		error("Invalid number!")
+		error("Invalid number provided!")
 	end
 end
 
 function checks.invalid_str(str: string)
 	if (type(str) ~= "string" or not str) then
-		error("Invalid string!")
+		error("Invalid string provided!")
 	end
 end
 
@@ -63,13 +75,13 @@ end
 
 function checks.invalid_table(t: {[any]: any})
 	if (type(t) ~= "table" or not t) then
-		error("Invalid table!")
+		error("Invalid table provided!")
 	end
 end
 
 function checks.invalid_thread(thread: thread | nil)
 	if not thread then
-		error("Couldn't return async thread!")
+		error("Invalid thread provided!")
 	end
 end
 

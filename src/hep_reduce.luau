@@ -13,7 +13,7 @@ local function create_instance(class_name: string, name: string | nil, parent)
 end
 
 -- @param parent - defaults to SoundService
--- NOTE: Also checks if name is invalid
+-- NOTE: Also checks if provided name is invalid
 function hep_reduce.create_regular_audio_player(
 	name: string, asset_id: number, parent: Instance | SoundService): AudioPlayer
 	checks.invalid_str(name)
@@ -28,12 +28,12 @@ function hep_reduce.create_regular_audio_player(
 	local wire: Wire = create_instance("Wire", nil, regular_audio_player)
 	wire.SourceInstance = regular_audio_player
 	wire.TargetInstance = audio_device_output
-
+	
 	return regular_audio_player
 end
 
 -- (SERVER ONLY)
--- NOTE: Also checks if parent is invalid
+-- NOTE: Also checks if provided parent is invalid
 function hep_reduce.create_leaderstats(parent: Player): Folder
 	checks.server_only()
 	checks.invalid_parent(parent)
@@ -48,12 +48,12 @@ function hep_reduce.create_leaderstats(parent: Player): Folder
 end
 
 -- (SERVER ONLY)
--- NOTE: Also checks if parent is invalid
+-- NOTE: Also checks if provided parent is invalid
 function hep_reduce.create_leaderstat(class_name: string, stat_name: string, value, parent: Folder)
 	checks.server_only()
 	checks.invalid_parent(parent)
 
-	local new_stat: ValueBase = create_instance("ValueBase", stat_name, parent)
+	local new_stat: ValueBase = create_instance(class_name, stat_name, parent)
 	new_stat.Value = value
 
 	return new_stat
@@ -121,33 +121,43 @@ function hep_reduce.disable_char_respawn(MAX_RETRIES: number | nil)
 end
 
 -- Get the model's "Head" using its character
--- NOTE: Also checks if character is invalid
+-- NOTE: Also checks if provided character is invalid
 function hep_reduce.get_head(char: Model): BasePart
 	checks.invalid_char(char)
 	local head: BasePart | nil = gets.get_char_instance(char, "Head") :: BasePart | nil
-	checks.invalid_char_inst(head, char.Name, "Head")
+	checks.invalid_char_child_inst(head, "Head")
 
 	return head :: BasePart
 end
 
 -- Get the model's "HumanoidRootPart" using its character
--- NOTE: Also checks if HumanoidRootPart is invalid
+-- NOTE: Also checks if provided "HumanoidRootPart" is invalid
 function hep_reduce.get_hrp(char: Model): BasePart
 	checks.invalid_char(char)
 	local hrp: BasePart | nil = gets.get_char_instance(char, "HumanoidRootPart") :: BasePart | nil
-	checks.invalid_char_inst(hrp, char.Name, "HumanoidRootPart")
+	checks.invalid_char_child_inst(hrp, "HumanoidRootPart")
 
 	return hrp :: BasePart
 end
 
 -- Get the model's "Humanoid" using its character
--- NOTE: Also checks if Humanoid is invalid
+-- NOTE: Also checks if provided "Humanoid" is invalid
 function hep_reduce.get_hum(char: Model): Humanoid
 	checks.invalid_char(char)
 	local hum: Humanoid | nil = gets.get_char_instance(char, "Humanoid") :: Humanoid | nil
-	checks.invalid_char_inst(hum, char.Name, "Humanoid")
+	checks.invalid_char_child_inst(hum, "Humanoid")
 
 	return hum :: Humanoid
+end
+
+-- Get the model's "Torso" using its character
+-- NOTE: Also checks if provided "Torso" is invalid
+function hep_reduce.get_torso(char: Model): BasePart
+	checks.invalid_char(char)
+	local hum: BasePart | nil = gets.get_char_instance(char, "Torso") :: BasePart | nil
+	checks.invalid_char_child_inst(hum, "Torso")
+
+	return hum :: BasePart
 end
 
 function hep_reduce.init_instance_list(container: Instance)
@@ -160,7 +170,7 @@ function hep_reduce.init_instance_list(container: Instance)
 	return storage
 end
 
--- NOTE: Also checks if table is invalid
+-- NOTE: Also checks if provided table is invalid
 function hep_reduce.get_random_instance(storage: {Instance?})
 	checks.invalid_table(storage)
 	
@@ -169,39 +179,55 @@ function hep_reduce.get_random_instance(storage: {Instance?})
 	return chosen_key
 end
 
--- NOTE: Also checks if number is invalid
+-- NOTE: Also checks if provided number is invalid
 function hep_reduce.is_non_positive(num: number): boolean
 	checks.invalid_num(num)
 	return num <= 0
 end
 
--- NOTE: Also checks if number is invalid
+-- NOTE: Also checks if provided number is invalid
 function hep_reduce.is_nan(num: number): boolean
 	checks.invalid_num(num)
 	return num ~= num
 end
 
--- NOTE: Also checks if string is invalid
+-- NOTE: Also checks if provided string is invalid
 function hep_reduce.is_empty_str(str_to_check: string): boolean
 	checks.invalid_str(str_to_check)
 	return not str_to_check:find("%S")
 end
 
--- NOTE: Also checks if string is invalid
+-- NOTE: Also checks if provided string is invalid
 function hep_reduce.is_empty_str_no_trim(str_to_check: string): boolean
 	checks.invalid_str(str_to_check)
 	return str_to_check == ""
 end
 
--- NOTE: Also checks if table is invalid
+-- NOTE: Also checks if provided table is invalid
 function hep_reduce.is_empty_table(table_to_check: {[any]: any}): boolean
 	checks.invalid_table(table_to_check)
 	return next(table_to_check) == nil
 end
 
+-- NOTE: Also checks if any provided "HumanoidRootPart" is invalid
+function hep_reduce.magnitude(hrp_1: BasePart, hrp_2: BasePart)
+	local hrps: {BasePart?} = {hrp_1, hrp_2}
+	checks.invalid_char_child_instances(hrps, "HumanoidRootPart")
+	
+	return (hrp_1.Position - hrp_2.Position).Magnitude
+end
+
+-- NOTE: Also checks if any provided "HumanoidRootPart" is invalid
+function hep_reduce.unit(hrp_1: BasePart, hrp_2: BasePart, multiplied_value: number)
+	local hrps: {BasePart?} = {hrp_1, hrp_2}
+	checks.invalid_char_child_instances(hrps, "HumanoidRootPart")
+
+	return (hrp_1.Position - hrp_2.Position).Unit * multiplied_value
+end
+
 -- @param seconds - setting it to 0 will default to RunService.Heartbeat:Wait()
 -- @return - the thread for cleanup / debugging purposes
--- NOTE: Also checks if number or thread is invalid
+-- NOTE: Also checks if provided number or thread is invalid
 function hep_reduce.schedule(seconds: number): thread?
 	local invalid_seconds: number | nil = checks.invalid_seconds(seconds)
 
