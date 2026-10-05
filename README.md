@@ -26,6 +26,7 @@ Tester is empty!
 hep_reduce.assert_studio(game ~= workspace, "DataModel is workspace!") -- nothing happens
 
 hep_reduce.is_studio() -- true
+```
 
 ## Documentation
 
