@@ -1,28 +1,34 @@
 # Hep Reduce
-- A module for Roblox Studio to reduce coding repetitiveness and easily improve readability.
+- A module for Roblox Studio to reduce some repetitiveness.
 
 ## Installation
 [hep_reduce.rbxm](https://github.com/Placewith5s/hep_reduce/releases)
 
 ## Usage
 ```luau
---!strict
 local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
-hep_reduce.create_regular_audio_player("test_audio", 1234567890)
+local folder: Folder = Instance.new("Folder")
+folder.Name = "Tester"
+folder.Parent = workspace
 
-game.Players.PlayerAdded:Wait() -- studio's poop break :)
+hep_reduce.award_badge(
+	plr, badge_id,
+	will_own_msg, already_owns_msg, err_msg
+)
 
-local possible_parts = hep_reduce.init_instance_list(workspace.Test_Folder)
+-- optional custom error message as the 2nd argument
+hep_reduce.assert_studio_common(folder)
+--[[
+Total folder items: 0
+Tester is empty!
+]]
+hep_reduce.assert_studio(game ~= workspace, "DataModel is workspace!") -- nothing happens
 
-hep_reduce.schedule(3)
-print("Here before 3 seconds!")
-
-local chosen_part = hep_reduce.get_random_instance(possible_parts)
-```
+hep_reduce.is_studio() -- true
 
 ## Documentation
-- LDoc
+
 
 ## Contribution
 [CONTRIBUTE.md](CONTRIBUTE.md)
