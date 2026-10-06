@@ -8,16 +8,19 @@
 ```luau
 local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
-local folder: Folder = Instance.new("Folder")
-folder.Name = "Tester"
-folder.Parent = workspace
+local folder: Folder = hep_reduce.instance_creator:new(
+	"Folder", {
+		name = "Tester",
+		parent = workspace
+	}
+)
 
-hep_reduce.award_badge(
+--[[hep_reduce.award_badge(
 	plr, badge_id,
 	{
 		will_own_msg, already_owns_msg, err_msg
 	}
-)
+)]]
 
 -- optional custom error message as the 2nd argument
 hep_reduce.assert_studio_common(folder)

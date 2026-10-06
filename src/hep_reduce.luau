@@ -1,6 +1,8 @@
 --!strict
 local hep_reduce = {}
 
+hep_reduce.instance_creator = require(script.instance_creator)
+
 local BS: BadgeService = game.BadgeService
 local RS = game["Run Service"]
 
@@ -49,14 +51,15 @@ function hep_reduce.assert_studio_common(var: string | number | {any} | Folder, 
 		
 		if not success then
 			warn("Table variable should NOT be 2D or higher:", err)
+			return
 		end
 	elseif var.ClassName == "Folder" then
 		if get_descendants then
 			print("Total folder items:", #var:GetDescendants())
-			hep_reduce.assert_studio(#var:GetDescendants(), var.Name .. " is empty!")
+			hep_reduce.assert_studio(#var:GetDescendants() > 0, var.Name .. " is empty!")
 		else
 			print("Total folder items:", #var:GetChildren())
-			hep_reduce.assert_studio(#var:GetChildren(), var.Name .. " is empty!")
+			hep_reduce.assert_studio(#var:GetChildren() > 0, var.Name .. " is empty!")
 		end
 	else
 		hep_reduce.assert_studio(var, "Unsupported variable! Variable not string or not number!")
