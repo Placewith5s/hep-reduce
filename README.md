@@ -14,7 +14,9 @@ folder.Parent = workspace
 
 hep_reduce.award_badge(
 	plr, badge_id,
-	will_own_msg, already_owns_msg, err_msg
+	{
+		will_own_msg, already_owns_msg, err_msg
+	}
 )
 
 -- optional custom error message as the 2nd argument

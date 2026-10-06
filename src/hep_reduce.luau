@@ -70,21 +70,21 @@ Checks if not already owned before awarding
 
 NOTE: NaN not checked against (may be okay for badges)
 ]]
-function hep_reduce.award_badge(plr: Player, badge_id: number, will_own_msg: string, already_owns_msg: string, err_msg: string)
+function hep_reduce.award_badge(plr: Player, badge_id: number, logs: {will_own_msg: string, already_owns_msg: string, err_msg: string})
 	hep_reduce.assert_studio(badge_id, "Invalid badge id given!")
 	hep_reduce.assert_studio(badge_id > 0, "Badge id given is not higher than 0!")
 
 	local success, err = pcall(function()
 		if not BS:UserHasBadgeAsync(plr.UserId, badge_id) then
-			print(will_own_msg)
+			print(logs.will_own_msg)
 			BS:AwardBadgeAsync(plr.UserId, badge_id)
 		end
 
-		print(already_owns_msg)
+		print(logs.already_owns_msg)
 	end)
 
 	if not success then
-		warn(err_msg, err)
+		warn(logs.err_msg, err)
 		return
 	end
 end
