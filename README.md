@@ -8,6 +8,36 @@
 ```luau
 local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
+
+local function when_plr_added(plr: Player)
+	print("Player added")
+	
+	print(plr.UserId)
+	local char = plr.Character or plr.CharacterAdded:Wait()
+	print(char.Parent.Parent)
+end
+
+
+local function when_char_added(char: Model)
+	print("Character added")
+	
+	print(char)
+	local hum = char:WaitForChild("Humanoid")
+	print(hum)
+end
+
+hep_reduce.player_added(
+	{
+		func = when_plr_added
+	}
+)
+
+hep_reduce.character_added(
+	{
+		func = when_char_added
+	}
+)
+
 local folder: Folder = hep_reduce.instance_creator:new(
 	"Folder", {
 		name = "Tester",
@@ -46,7 +76,7 @@ local new_children_no_parent = hep_reduce.GetClonedChildren(folder)
 
 for _, child in new_children_no_parent do
 	print(child.Parent) -- nil
-	
+
 	child.Parent = game.ReplicatedStorage
 	print(child.Parent) -- ReplicatedStorage
 end
