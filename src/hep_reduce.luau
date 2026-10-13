@@ -172,7 +172,7 @@ end
 function hep_reduce.player_added(args: {func: (player: Player) -> ()})
 	hep_reduce.assert_studio(type(args.func) == "function", "Invalid function given!")
 
-	local plr_added_conn = game.Players.PlayerAdded:Connect(function(plr: Player)
+	const plr_added_conn = game.Players.PlayerAdded:Connect(function(plr: Player)
 		local success, err = pcall(args.func, plr)
 
 		if not success then
@@ -192,7 +192,7 @@ INFO: PlayerAdded connection returned and CharacterAdded connection not returned
 function hep_reduce.character_added(args: {func: (character: Model) -> ()})
 	hep_reduce.assert_studio(type(args.func) == "function", "Invalid function given!")
 	
-	local plr_added_conn = game.Players.PlayerAdded:Connect(function(plr: Player)
+	const plr_added_conn = game.Players.PlayerAdded:Connect(function(plr: Player)
 		plr.CharacterAdded:Connect(function(char: Model)
 			local success, err = pcall(args.func, char)
 			
