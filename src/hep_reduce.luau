@@ -106,9 +106,9 @@ function hep_reduce.award_badge(plr: Player, badge_id: number, logs: {will_own_m
 		if not BS:UserHasBadgeAsync(plr.UserId, badge_id) then
 			print(logs.will_own_msg)
 			BS:AwardBadgeAsync(plr.UserId, badge_id)
+		else
+			print(logs.already_owns_msg)
 		end
-
-		print(logs.already_owns_msg)
 	end)
 
 	if not success then
