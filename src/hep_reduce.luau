@@ -222,4 +222,33 @@ function hep_reduce.character_added(args: {func: (character: Model) -> ()})
 	return plr_added_conn
 end
 
+
+--[[ Getting local PlayerGui QOL
+
+Asserts / warns when used in a server script
+]]
+function hep_reduce.get_local_plr_gui(): PlayerGui
+	hep_reduce.assert_studio(
+		RS:IsClient(),
+		"Cannot get PlayerGui in a server script! Forbidden!"
+	)
+	
+	return game.Players.LocalPlayer.PlayerGui
+end
+
+
+--[[ Getting local Character QOL
+
+Asserts / warns when used in a server script
+]]
+function hep_reduce.get_local_char()
+	hep_reduce.assert_studio(
+		RS:IsClient(),
+		"Cannot get local Character in a server script! Forbidden!"
+	)
+	
+	return game.Players.LocalPlayer.Character or
+		game.Players.LocalPlayer.CharacterAdded:Wait()
+end
+
 return hep_reduce
