@@ -88,6 +88,20 @@ end
 hep_reduce.assert_studio(game ~= workspace, "DataModel is workspace!") -- nothing happens
 
 hep_reduce.is_studio() -- true
+
+
+--[[ local script
+local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
+
+local plr_gui = hep_reduce.get_local_plr_gui()
+print(plr_gui)
+
+local plr = plr_gui.Parent
+print(plr.UserId)
+
+local char = hep_reduce.get_local_char()
+print(char)
+]]
 ```
 
 ## Documentation
