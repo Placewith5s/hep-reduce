@@ -59,13 +59,15 @@ function hep_reduce.assert_studio(what: any, err_msg: string?)
 		not hep_reduce.is_studio()
 	then
 		debug.info(2, "sl")
-
-		if type(what) == "boolean" then
-			warn(what, err_msg or "false!")
-			return
-		else
-			warn(what, err_msg or typeof(what) .. "is nil!")
-			return
+		
+		if not what then
+			if type(what) == "boolean" then
+				warn(what, err_msg or "false!")
+				return
+			else
+				warn(what, err_msg or typeof(what) .. "is nil!")
+				return
+			end
 		end
 	end
 end
