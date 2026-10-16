@@ -31,6 +31,9 @@ hep_reduce.instance_creator = require(script.instance_creator)
 local BS: BadgeService = game.BadgeService
 local RS = game["Run Service"]
 
+-- whether to warn in production for server scripts only
+hep_reduce.warn_in_prod = true
+
 
 -- used by assert studio functions but can come in handy
 function hep_reduce.is_studio(): boolean
@@ -43,13 +46,26 @@ default error message for conditions: "false!"
 default error message for other types: "typeof(what) is nil!"
 ]]
 function hep_reduce.assert_studio(what: any, err_msg: string?)
-	if hep_reduce.is_studio then
+	if hep_reduce.is_studio() then
 		debug.info(2, "sl")
 
 		if type(what) == "boolean" then
 			assert(what, err_msg or "false!")
 		else
 			assert(what, err_msg or typeof(what) .. "is nil!")
+		end
+	elseif (hep_reduce.warn_in_prod and
+		RS:IsServer()) and
+		not hep_reduce.is_studio()
+	then
+		debug.info(2, "sl")
+
+		if type(what) == "boolean" then
+			warn(what, err_msg or "false!")
+			return
+		else
+			warn(what, err_msg or typeof(what) .. "is nil!")
+			return
 		end
 	end
 end
