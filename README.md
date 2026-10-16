@@ -8,10 +8,13 @@
 ```luau
 local hep_reduce = require(game.ReplicatedStorage.hep_reduce)
 
+-- whether to warn in production for server scripts only
+--hep_reduce.warn_in_prod = true -- default: true
+
 
 local function when_plr_added(plr: Player)
 	print("Player added")
-	
+
 	print(plr.UserId)
 	local char = plr.Character or plr.CharacterAdded:Wait()
 	print(char.Parent.Parent)
@@ -20,7 +23,7 @@ end
 
 local function when_char_added(char: Model)
 	print("Character added")
-	
+
 	print(char)
 	local hum = char:WaitForChild("Humanoid")
 	print(hum)
