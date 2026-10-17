@@ -16,10 +16,14 @@ hep-reduce documentation
 
 .. lua:data:: hep_reduce.warn_in_prod: boolean
 
+	.. version-added:: v2.4.0
+
 	Whether to warn in production for server scripts only
 
 .. lua:function:: hep_reduce.is_studio(): boolean
 	
+	.. version-added:: v2.0.0
+
 	used by assert studio functions but can come in handy
 
 	.. code-block:: luau
@@ -29,6 +33,8 @@ hep-reduce documentation
 		hep_reduce.is_studio() -- true
 
 .. lua:function:: hep_reduce.assert_studio(what: any, err_msg: string?)
+
+	.. version-added:: v2.0.0
 
 	:param what: What to check for assert. Either a condition or a variable
 	:param err_msg: The error message
@@ -43,6 +49,8 @@ hep-reduce documentation
 		hep_reduce.assert_studio(game ~= workspace, "DataModel is workspace!") -- nothing happens
 
 .. lua:function:: hep_reduce.assert_studio_common(var: string | number | {any} | Folder, err_msg: string?, get_descendants: boolean?)
+
+	.. version-added:: v2.0.0
 
 	Assert studio but for strings, numbers, a certain type of 1D tables, and folders
 
@@ -63,6 +71,8 @@ hep-reduce documentation
 		]]
 
 .. lua:function:: hep_reduce.award_badge(plr: Player, badge_id: number, logs: {will_own_msg: string, already_owns_msg: string, err_msg: string})
+
+	.. version-added:: v2.0.0
 
 	Award a badge to a player
 
@@ -89,6 +99,8 @@ hep-reduce documentation
 
 .. lua:function:: hep_reduce.GetClonedChildren(instance: Instance?, parent: Instance?): {Instance}
 
+	.. version-added:: v2.2.0
+	
 	:param instance: The instance to clone
 	:param parent: The parent to clone instance to
 	:return: an array containing all of the cloned instance's children
@@ -102,6 +114,8 @@ hep-reduce documentation
 
 .. lua:function:: hep_reduce.GetClonedDescendants(instance: Instance?, parent: Instance?): {Instance}
 
+	.. version-added:: v2.2.0
+
 	:param instance: The instance to clone
 	:param parent: The parent to clone instance to
 	:return: an array containing all of the cloned descendants of the instance
@@ -114,6 +128,8 @@ hep-reduce documentation
 		print(new_descendants)
 
 .. lua:function:: hep_reduce.player_added(args: {func: (player: Player) -> ()})
+
+	.. version-added:: v2.3.0
 
 	:param args.func: The function to call inside PlayerAdded:Connect()
 	:return: RBXScriptConnection
@@ -137,6 +153,8 @@ hep-reduce documentation
 		)
 
 .. lua:function:: hep_reduce.character_added(args: {func: (character: Model) -> ()})
+
+	.. version-added:: v2.3.0
 
 	:param args.func: The function to call inside CharacterAdded:Connect()
 	:return: RBXScriptConnection
@@ -163,6 +181,8 @@ hep-reduce documentation
 
 .. lua:function:: hep_reduce.get_local_plr_gui(): PlayerGui
 
+	.. version-added:: v2.5.0
+
 	Getting local PlayerGui QOL
 
 	:note: Asserts / warns when used in a server script
@@ -176,6 +196,8 @@ hep-reduce documentation
 
 .. lua:function:: hep_reduce.get_local_char()
 
+	.. version-added:: v2.5.0
+
 	Getting local Character QOL
 
 	:return: Model
@@ -188,3 +210,101 @@ hep-reduce documentation
 
 		local char = hep_reduce.get_local_char()
 		print(char)
+
+
+.. lua:function:: hep_reduce.create_regular_audio_player(name: string, asset_id: number, parent: Instance | SoundService): AudioPlayer
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.create_leaderstats(parent: Player): Folder
+
+	.. version-removed:: v2.0.0
+		hep_reduce.instance_creator:new() should be used instead
+
+.. lua:function:: hep_reduce.create_leaderstat(class_name: string, stat_name: string, value, parent: Folder)
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.create_debounce(duration: number): () -> boolean
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.create_plr_debounce(duration: number): (player: Player) -> boolean
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.disable_char_respawn(MAX_RETRIES: number | nil)
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.get_head(char: Model): BasePart
+
+	.. version-removed:: v2.0.0
+		Use hep_reduce.character_added or hep_reduce.get_local_char() instead
+
+.. lua:function:: hep_reduce.get_hrp(char: Model): BasePart
+
+	.. version-removed:: v2.0.0
+		Use hep_reduce.character_added or hep_reduce.get_local_char() instead
+
+.. lua:function:: hep_reduce.get_hum(char: Model): Humanoid
+
+	.. version-removed:: v2.0.0
+		Use hep_reduce.character_added or hep_reduce.get_local_char() instead
+
+.. lua:function:: hep_reduce.get_torso(char: Model): BasePart
+
+	.. version-removed:: v2.0.0
+		Use hep_reduce.character_added or hep_reduce.get_local_char() instead
+
+.. lua:function:: hep_reduce.init_instance_list(container: Instance?)
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.get_random_instance(storage: {Instance?})
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.is_non_positive(num: number): boolean
+
+	.. version-removed:: v2.0.0
+		Use math.isinf(x: number) or math.isfinite(x: number) instead
+
+.. lua:function:: hep_reduce.is_nan(num: number): boolean
+
+	.. version-removed:: v2.0.0
+		Use the built-in math.isnan(x: number) instead
+
+.. lua:function:: hep_reduce.is_empty_str(str_to_check: string): boolean
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.is_empty_str_no_trim(str_to_check: string): boolean
+
+	.. version-removed:: v2.0.0
+		Use hep_reduce.assert_studio_common() instead
+
+.. lua:function:: hep_reduce.is_empty_table(table_to_check: {[any]: any}): boolean
+
+	.. version-removed:: v2.0.0
+		Use hep_reduce.assert_studio_common() instead
+
+.. lua:function:: hep_reduce.magnitude(hrp_1: BasePart, hrp_2: BasePart)
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.unit(hrp_1: BasePart, hrp_2: BasePart, multiplied_value: number)
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.schedule(seconds: number): thread?
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.retry(max_attempts: number, func: () -> ()): boolean
+
+	.. version-removed:: v2.0.0
+
+.. lua:function:: hep_reduce.timeout(seconds: number, err_msg: string, func: () -> ())
+
+	.. version-removed:: v2.0.0
