@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'hep-reduce'
-copyright = '2026, Placewith5s'
+copyright = '2026, MIT License, Placewith5s'
 author = 'Placewith5s'
 release = 'docs'
 
