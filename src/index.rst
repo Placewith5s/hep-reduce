@@ -97,6 +97,29 @@ hep-reduce documentation
 			}
 		)
 
+.. lua:function:: hep_reduce.instance_creator.new(class_name: string, common: {name: string, parent: Instance?}): any
+
+	.. version-added:: v2.1.0
+
+	:param class_name: The instance's class name
+	:param common.name: The name of the instance
+	:param common.parent: The parent of the instance
+
+	:note: It is ":new" for this method not ".new"!
+
+	.. code-block:: luau
+		:linenos:
+		:caption: instance_creator:new Example
+
+		local folder: Folder = hep_reduce.instance_creator:new(
+			"Folder", {
+				name = "Tester",
+				parent = workspace
+			}
+		)
+
+		print(folder) -- Tester
+
 .. lua:function:: hep_reduce.GetClonedChildren(instance: Instance?, parent: Instance?): {Instance}
 
 	.. version-added:: v2.2.0
@@ -211,6 +234,28 @@ hep-reduce documentation
 		local char = hep_reduce.get_local_char()
 		print(char)
 
+.. lua:function:: hep_reduce.instance_creator.new_value_object(value_object_class_name: string, common: {name: string, value: string, parent: Instance?})
+
+	.. version-added:: v2.6.0
+
+	:param value_object_class_name: IntValue, NumberValue, StringValue, BoolValue, ObjectValue, etc.
+	:param common.name: The name of the value object
+	:param common.value: The value of the value object
+	:param common.parent: The parent of the value object
+
+	.. code-block:: luau
+		:linenos:
+		:caption: instance_creator.new_value_object Example
+
+		local enemy_health: IntValue = hep_reduce.instance_creator.new_value_base(
+			"IntValue", {
+				name = "Enemy Health",
+				value = 0,
+				parent = workspace
+			}
+		)
+
+		print(enemy_health) -- Enemy Health
 
 .. lua:function:: hep_reduce.create_regular_audio_player(name: string, asset_id: number, parent: Instance | SoundService): AudioPlayer
 
@@ -224,6 +269,7 @@ hep-reduce documentation
 .. lua:function:: hep_reduce.create_leaderstat(class_name: string, stat_name: string, value, parent: Folder)
 
 	.. version-removed:: v2.0.0
+		Use instance_creator.new_value_object() instead
 
 .. lua:function:: hep_reduce.create_debounce(duration: number): () -> boolean
 

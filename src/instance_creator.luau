@@ -60,4 +60,18 @@ function instance_creator:new(class_name: string, common: {name: string, parent:
 	return instance.creation
 end
 
+
+function instance_creator.new_value_object(value_object_class_name: string, common: {name: string, value: string, parent: Instance?})
+	local creation = instance_creator:new(
+		value_object_class_name,
+		{
+			name = common.name,
+			parent = common.parent
+		}
+	)
+	creation.Value = common.value
+	
+	return creation
+end
+
 return instance_creator
