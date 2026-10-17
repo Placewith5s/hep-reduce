@@ -278,13 +278,19 @@
 <dl class="lua data">
 <dt class="sig sig-object lua" id="lua-hep_reduce.warn_in_prod">
 <span class="sig-name descname"><span class="pre">hep_reduce.warn_in_prod</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.warn_in_prod" title="Link to this definition">#</a></dt>
-<dd><p>Whether to warn in production for server scripts only</p>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.4.0.</span></p>
+</div>
+<p>Whether to warn in production for server scripts only</p>
 </dd></dl>
 
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.is_studio">
 <span class="sig-name descname"><span class="pre">hep_reduce.is_studio</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.is_studio" title="Link to this definition">#</a></dt>
-<dd><p>used by assert studio functions but can come in handy</p>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.0.0.</span></p>
+</div>
+<p>used by assert studio functions but can come in handy</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">is_studio Example</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">is_studio</span><span class="p">()</span><span class="w"> </span><span class="c1">-- true</span>
@@ -296,7 +302,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.assert_studio">
 <span class="sig-name descname"><span class="pre">hep_reduce.assert_studio</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">what</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">any</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">err_msg?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.assert_studio" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.0.0.</span></p>
+</div>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>what</strong> – What to check for assert. Either a condition or a variable</p></li>
@@ -321,7 +330,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.assert_studio_common">
 <span class="sig-name descname"><span class="pre">hep_reduce.assert_studio_common</span></span><span class="p"><span class="pre">(</span></span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">var</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">any</span></code><span class="p"><span class="pre">}</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Folder</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">err_msg?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">get_descendants?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><br /><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.assert_studio_common" title="Link to this definition">#</a><br /></dt>
-<dd><p>Assert studio but for strings, numbers, a certain type of 1D tables, and folders</p>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.0.0.</span></p>
+</div>
+<p>Assert studio but for strings, numbers, a certain type of 1D tables, and folders</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -351,7 +363,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.award_badge">
 <span class="sig-name descname"><span class="pre">hep_reduce.award_badge</span></span><span class="p"><span class="pre">(</span></span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">plr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Player</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">badge_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">logs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="n"><span class="pre">will_own_msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">already_owns_msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">err_msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">}</span></span><br /><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.award_badge" title="Link to this definition">#</a><br /></dt>
-<dd><p>Award a badge to a player</p>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.0.0.</span></p>
+</div>
+<p>Award a badge to a player</p>
 <dl class="field-list simple">
 <dt class="field-odd">Caption<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Checks if not already owned before awarding</p>
@@ -384,7 +399,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.GetClonedChildren">
 <span class="sig-name descname"><span class="pre">hep_reduce.GetClonedChildren</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">instance?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">parent?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#lua-hep_reduce.GetClonedChildren" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.2.0.</span></p>
+</div>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instance</strong> – The instance to clone</p></li>
@@ -407,7 +425,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.GetClonedDescendants">
 <span class="sig-name descname"><span class="pre">hep_reduce.GetClonedDescendants</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">instance?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">parent?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#lua-hep_reduce.GetClonedDescendants" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.2.0.</span></p>
+</div>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>instance</strong> – The instance to clone</p></li>
@@ -430,7 +451,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.player_added">
 <span class="sig-name descname"><span class="pre">hep_reduce.player_added</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">player</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Player</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.player_added" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.3.0.</span></p>
+</div>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args.func</strong> – The function to call inside PlayerAdded:Connect()</p>
 </dd>
@@ -461,7 +485,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.character_added">
 <span class="sig-name descname"><span class="pre">hep_reduce.character_added</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">character</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Model</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.character_added" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.3.0.</span></p>
+</div>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>args.func</strong> – The function to call inside CharacterAdded:Connect()</p>
 </dd>
@@ -495,7 +522,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.get_local_plr_gui">
 <span class="sig-name descname"><span class="pre">hep_reduce.get_local_plr_gui</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">PlayerGui</span></code><a class="headerlink" href="#lua-hep_reduce.get_local_plr_gui" title="Link to this definition">#</a></dt>
-<dd><p>Getting local PlayerGui QOL</p>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.5.0.</span></p>
+</div>
+<p>Getting local PlayerGui QOL</p>
 <dl class="field-list simple">
 <dt class="field-odd">Note<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Asserts / warns when used in a server script</p>
@@ -513,7 +543,10 @@
 <dl class="lua function">
 <dt class="sig sig-object lua" id="lua-hep_reduce.get_local_char">
 <span class="sig-name descname"><span class="pre">hep_reduce.get_local_char</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.get_local_char" title="Link to this definition">#</a></dt>
-<dd><p>Getting local Character QOL</p>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version v2.5.0.</span></p>
+</div>
+<p>Getting local Character QOL</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Model</p>
@@ -528,6 +561,182 @@
 <span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">char</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.create_regular_audio_player">
+<span class="sig-name descname"><span class="pre">hep_reduce.create_regular_audio_player</span></span><span class="p"><span class="pre">(</span></span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">asset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">SoundService</span></code><br /><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">AudioPlayer</span></code><a class="headerlink" href="#lua-hep_reduce.create_regular_audio_player" title="Link to this definition">#</a><br /></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.create_leaderstats">
+<span class="sig-name descname"><span class="pre">hep_reduce.create_leaderstats</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Player</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Folder</span></code><a class="headerlink" href="#lua-hep_reduce.create_leaderstats" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>hep_reduce.instance_creator:new() should be used instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.create_leaderstat">
+<span class="sig-name descname"><span class="pre">hep_reduce.create_leaderstat</span></span><span class="p"><span class="pre">(</span></span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">stat_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Folder</span></code><br /><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.create_leaderstat" title="Link to this definition">#</a><br /></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.create_debounce">
+<span class="sig-name descname"><span class="pre">hep_reduce.create_debounce</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.create_debounce" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.create_plr_debounce">
+<span class="sig-name descname"><span class="pre">hep_reduce.create_plr_debounce</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">player</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Player</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.create_plr_debounce" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.disable_char_respawn">
+<span class="sig-name descname"><span class="pre">hep_reduce.disable_char_respawn</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">MAX_RETRIES</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">nil</span></code><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.disable_char_respawn" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.get_head">
+<span class="sig-name descname"><span class="pre">hep_reduce.get_head</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">char</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Model</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">BasePart</span></code><a class="headerlink" href="#lua-hep_reduce.get_head" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use hep_reduce.character_added or hep_reduce.get_local_char() instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.get_hrp">
+<span class="sig-name descname"><span class="pre">hep_reduce.get_hrp</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">char</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Model</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">BasePart</span></code><a class="headerlink" href="#lua-hep_reduce.get_hrp" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use hep_reduce.character_added or hep_reduce.get_local_char() instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.get_hum">
+<span class="sig-name descname"><span class="pre">hep_reduce.get_hum</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">char</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Model</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Humanoid</span></code><a class="headerlink" href="#lua-hep_reduce.get_hum" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use hep_reduce.character_added or hep_reduce.get_local_char() instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.get_torso">
+<span class="sig-name descname"><span class="pre">hep_reduce.get_torso</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">char</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Model</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">BasePart</span></code><a class="headerlink" href="#lua-hep_reduce.get_torso" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use hep_reduce.character_added or hep_reduce.get_local_char() instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.init_instance_list">
+<span class="sig-name descname"><span class="pre">hep_reduce.init_instance_list</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">container?</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.init_instance_list" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.get_random_instance">
+<span class="sig-name descname"><span class="pre">hep_reduce.get_random_instance</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">storage</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">Instance</span></code><span class="p"><span class="pre">?</span></span><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.get_random_instance" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.is_non_positive">
+<span class="sig-name descname"><span class="pre">hep_reduce.is_non_positive</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.is_non_positive" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use math.isinf(x: number) or math.isfinite(x: number) instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.is_nan">
+<span class="sig-name descname"><span class="pre">hep_reduce.is_nan</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.is_nan" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use the built-in math.isnan(x: number) instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.is_empty_str">
+<span class="sig-name descname"><span class="pre">hep_reduce.is_empty_str</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">str_to_check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.is_empty_str" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.is_empty_str_no_trim">
+<span class="sig-name descname"><span class="pre">hep_reduce.is_empty_str_no_trim</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">str_to_check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.is_empty_str_no_trim" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use hep_reduce.assert_studio_common() instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.is_empty_table">
+<span class="sig-name descname"><span class="pre">hep_reduce.is_empty_table</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">table_to_check</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">[</span></span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">any</span></code><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">any</span></code><span class="p"><span class="pre">}</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.is_empty_table" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0: </span>Use hep_reduce.assert_studio_common() instead</p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.magnitude">
+<span class="sig-name descname"><span class="pre">hep_reduce.magnitude</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">hrp_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">BasePart</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">hrp_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">BasePart</span></code><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.magnitude" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.unit">
+<span class="sig-name descname"><span class="pre">hep_reduce.unit</span></span><span class="p"><span class="pre">(</span></span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">hrp_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">BasePart</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">hrp_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">BasePart</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><br /><span class="w">&#160;&#160;&#160; </span><span class="n"><span class="pre">multiplied_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><br /><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.unit" title="Link to this definition">#</a><br /></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.schedule">
+<span class="sig-name descname"><span class="pre">hep_reduce.schedule</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">thread</span></code><span class="p"><span class="pre">?</span></span><a class="headerlink" href="#lua-hep_reduce.schedule" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.retry">
+<span class="sig-name descname"><span class="pre">hep_reduce.retry</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">max_attempts</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.retry" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="lua function">
+<dt class="sig sig-object lua" id="lua-hep_reduce.timeout">
+<span class="sig-name descname"><span class="pre">hep_reduce.timeout</span></span><span class="p"><span class="pre">(</span></span><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">number</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">err_msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">string</span></code><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.timeout" title="Link to this definition">#</a></dt>
+<dd><div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version v2.0.0.</span></p>
 </div>
 </dd></dl>
 
@@ -573,6 +782,28 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.character_added"><code class="docutils literal notranslate"><span class="pre">hep_reduce.character_added()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_local_plr_gui"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_local_plr_gui()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_local_char"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_local_char()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.create_regular_audio_player"><code class="docutils literal notranslate"><span class="pre">hep_reduce.create_regular_audio_player()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.create_leaderstats"><code class="docutils literal notranslate"><span class="pre">hep_reduce.create_leaderstats()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.create_leaderstat"><code class="docutils literal notranslate"><span class="pre">hep_reduce.create_leaderstat()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.create_debounce"><code class="docutils literal notranslate"><span class="pre">hep_reduce.create_debounce()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.create_plr_debounce"><code class="docutils literal notranslate"><span class="pre">hep_reduce.create_plr_debounce()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.disable_char_respawn"><code class="docutils literal notranslate"><span class="pre">hep_reduce.disable_char_respawn()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_head"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_head()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_hrp"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_hrp()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_hum"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_hum()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_torso"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_torso()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.init_instance_list"><code class="docutils literal notranslate"><span class="pre">hep_reduce.init_instance_list()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_random_instance"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_random_instance()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.is_non_positive"><code class="docutils literal notranslate"><span class="pre">hep_reduce.is_non_positive()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.is_nan"><code class="docutils literal notranslate"><span class="pre">hep_reduce.is_nan()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.is_empty_str"><code class="docutils literal notranslate"><span class="pre">hep_reduce.is_empty_str()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.is_empty_str_no_trim"><code class="docutils literal notranslate"><span class="pre">hep_reduce.is_empty_str_no_trim()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.is_empty_table"><code class="docutils literal notranslate"><span class="pre">hep_reduce.is_empty_table()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.magnitude"><code class="docutils literal notranslate"><span class="pre">hep_reduce.magnitude()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.unit"><code class="docutils literal notranslate"><span class="pre">hep_reduce.unit()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.schedule"><code class="docutils literal notranslate"><span class="pre">hep_reduce.schedule()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.retry"><code class="docutils literal notranslate"><span class="pre">hep_reduce.retry()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.timeout"><code class="docutils literal notranslate"><span class="pre">hep_reduce.timeout()</span></code></a></li>
 </ul>
   </nav></div>
 
