@@ -285,6 +285,12 @@
 <dt class="sig sig-object lua" id="lua-hep_reduce.is_studio">
 <span class="sig-name descname"><span class="pre">hep_reduce.is_studio</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><code class="xref lua lua-_auto docutils literal notranslate"><span class="pre">boolean</span></code><a class="headerlink" href="#lua-hep_reduce.is_studio" title="Link to this definition">#</a></dt>
 <dd><p>used by assert studio functions but can come in handy</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">is_studio Example</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">is_studio</span><span class="p">()</span><span class="w"> </span><span class="c1">-- true</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -304,6 +310,12 @@
 <dd class="field-odd"><p>default error message for other types: “typeof(what) is nil!”</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">assert_studio Example</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">assert_studio</span><span class="p">(</span><span class="nv">game</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="nv">workspace</span><span class="p">,</span><span class="w"> </span><span class="s2">"DataModel is workspace!"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- nothing happens</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -325,6 +337,15 @@
 <dd class="field-odd"><p>Does not handle whitespace for strings</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">assert_studio_common Example</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">assert_studio_common</span><span class="p">(</span><span class="nv">folder</span><span class="p">)</span>
+<span class="linenos">2</span><span class="cm">--[[</span>
+<span class="linenos">3</span><span class="cm">Total folder items: 1</span>
+<span class="linenos">4</span><span class="cm">]]</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -345,6 +366,19 @@
 </ul>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">award_badge Example</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">award_badge</span><span class="p">(</span>
+<span class="linenos">2</span><span class="w">        </span><span class="nv">plr</span><span class="p">,</span><span class="w"> </span><span class="mf">1234567890</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">                </span><span class="s2">"Player will own badge name"</span><span class="p">,</span>
+<span class="linenos">5</span><span class="w">                </span><span class="s2">"Player already owns badge name"</span><span class="p">,</span>
+<span class="linenos">6</span><span class="w">                </span><span class="s2">"Cannot award badge! Is badge enabled?"</span>
+<span class="linenos">7</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -361,6 +395,13 @@
 <dd class="field-even"><p>an array containing all of the cloned instance’s children</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">GetClonedChildren Example</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">new_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">GetClonedChildren</span><span class="p">(</span><span class="nv">folder</span><span class="p">,</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nv">ReplicatedStorage</span><span class="p">)</span>
+<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">new_children</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -377,6 +418,13 @@
 <dd class="field-even"><p>an array containing all of the cloned descendants of the instance</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">GetClonedDescendants Example</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">new_descendants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">GetClonedDescendants</span><span class="p">(</span><span class="nv">folder</span><span class="p">,</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nv">ServerStorage</span><span class="p">)</span>
+<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">new_descendants</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -390,6 +438,24 @@
 <dd class="field-even"><p>RBXScriptConnection</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">player_added Example</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">when_plr_added</span><span class="p">(</span><span class="nv">plr</span><span class="p">:</span><span class="w"> </span><span class="nc">Player</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="s2">"Player added"</span><span class="p">)</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nv">plr</span><span class="p">.</span><span class="nv">UserId</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">plr</span><span class="p">.</span><span class="nv">Character</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">plr</span><span class="p">.</span><span class="nv">CharacterAdded</span><span class="p">:</span><span class="nc">Wait</span><span class="p">()</span>
+<span class="linenos"> 6</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nv">char</span><span class="p">.</span><span class="nv">Parent</span><span class="p">.</span><span class="nv">Parent</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="kr">end</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">player_added</span><span class="p">(</span>
+<span class="linenos">10</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">11</span><span class="w">                </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">when_plr_added</span>
+<span class="linenos">12</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -406,6 +472,24 @@
 <dd class="field-odd"><p>PlayerAdded connection returned and CharacterAdded connection not returned</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">character_added Example</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">when_char_added</span><span class="p">(</span><span class="nv">char</span><span class="p">:</span><span class="w"> </span><span class="nc">Model</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="s2">"Character added"</span><span class="p">)</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nv">char</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">hum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">char</span><span class="p">:</span><span class="nc">WaitForChild</span><span class="p">(</span><span class="s2">"Humanoid"</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nv">hum</span><span class="p">)</span>
+<span class="linenos"> 7</span><span class="kr">end</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">character_added</span><span class="p">(</span>
+<span class="linenos">10</span><span class="w">        </span><span class="p">{</span>
+<span class="linenos">11</span><span class="w">                </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">when_char_added</span>
+<span class="linenos">12</span><span class="w">        </span><span class="p">}</span>
+<span class="linenos">13</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
@@ -417,11 +501,18 @@
 <dd class="field-odd"><p>Asserts / warns when used in a server script</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">get_local_plr_gui Example</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">plr_gui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_plr_gui</span><span class="p">()</span>
+<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">plr_gui</span><span class="p">)</span><span class="w"> </span><span class="c1">-- PlayerGui</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 <dl class="lua function">
-<dt class="sig sig-object lua" id="lua-0">
-<span class="sig-name descname"><span class="pre">hep_reduce.get_local_plr_gui</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-0" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object lua" id="lua-hep_reduce.get_local_char">
+<span class="sig-name descname"><span class="pre">hep_reduce.get_local_char</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#lua-hep_reduce.get_local_char" title="Link to this definition">#</a></dt>
 <dd><p>Getting local Character QOL</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return<span class="colon">:</span></dt>
@@ -431,6 +522,13 @@
 <dd class="field-even"><p>Asserts / warns when used in a server script</p>
 </dd>
 </dl>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">get_local_char Example</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_char</span><span class="p">()</span>
+<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">char</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </dd></dl>
 
 </section>
@@ -474,7 +572,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.player_added"><code class="docutils literal notranslate"><span class="pre">hep_reduce.player_added()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.character_added"><code class="docutils literal notranslate"><span class="pre">hep_reduce.character_added()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_local_plr_gui"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_local_plr_gui()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-0"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_local_plr_gui()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lua-hep_reduce.get_local_char"><code class="docutils literal notranslate"><span class="pre">hep_reduce.get_local_char()</span></code></a></li>
 </ul>
   </nav></div>
 
