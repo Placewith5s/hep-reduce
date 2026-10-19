@@ -32,7 +32,7 @@ local BS: BadgeService = game.BadgeService
 local RS = game["Run Service"]
 
 -- whether to warn in production for server scripts only
-hep_reduce.warn_in_prod = true
+hep_reduce.warn_in_prod = script:GetAttribute("warn_in_prod")
 
 
 -- used by assert studio functions but can come in handy
