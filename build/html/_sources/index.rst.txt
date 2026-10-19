@@ -80,9 +80,9 @@ hep-reduce documentation
 
 	:param plr: The player
 	:param badge_id: The asset id of the badge
-	:param logs.will_own_msg: The log message displayed for players who are about to get the badge
-	:param logs.already_owns_msg: The log message displayed for players who already have the badge
-	:param logs.err_msg: The error message
+	:param logs.will_own_msg: The log message displayed for players who are about to get the badge. Default: "Player will own badge id: badge_id"
+	:param logs.already_owns_msg: The log message displayed for players who already have the badge. Default: "Player already has badge id: badge_id"
+	:param logs.err_msg: The error message. Default: "Cannot get badge id: badge_id"
 
 	.. code-block:: luau
 		:linenos:
