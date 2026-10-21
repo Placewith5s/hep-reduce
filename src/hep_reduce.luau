@@ -24,12 +24,12 @@ SOFTWARE.
 ]]
 
 --!strict
-local hep_reduce = {}
+const hep_reduce = {}
 
 hep_reduce.instance_creator = require(script.instance_creator)
 
-local BS: BadgeService = game.BadgeService
-local RS = game["Run Service"]
+const BS: BadgeService = game.BadgeService
+const RS = game["Run Service"]
 
 -- whether to warn in production for server scripts only
 hep_reduce.warn_in_prod = script:GetAttribute("warn_in_prod")
@@ -149,7 +149,7 @@ function hep_reduce.award_badge(plr: Player, badge_id: number, logs: {will_own_m
 end
 
 
-local function clone_worker(current_array: {Instance}, parent: Instance?)
+const function clone_worker(current_array: {Instance}, parent: Instance?)
 	local cloned_array: {Instance} = {}
 	
 	for _, inst in current_array do
