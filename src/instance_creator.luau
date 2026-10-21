@@ -24,11 +24,11 @@ SOFTWARE.
 ]]
 
 --!strict
-local instance_creator = {}
+const instance_creator = {}
 instance_creator.__index = instance_creator
 
 
-local function make(class_name: string, name: string, parent: Instance?): any
+const function make(class_name: string, name: string, parent: Instance?): any
 	local creation: any = nil
 	
 	local success, err = pcall(function()
