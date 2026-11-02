@@ -293,8 +293,8 @@
 <p>used by assert studio functions but can come in handy</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">is_studio Example</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">is_studio</span><span class="p">()</span><span class="w"> </span><span class="c1">-- true</span>
-</pre></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">is_studio</span><span class="p">()</span><span class="w"> </span><span class="c1">-- true</span>
+</span></pre></div>
 </div>
 </div>
 </dd></dl>
@@ -321,8 +321,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">assert_studio Example</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">assert_studio</span><span class="p">(</span><span class="nv">game</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="nv">workspace</span><span class="p">,</span><span class="w"> </span><span class="s2">"DataModel is workspace!"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- nothing happens</span>
-</pre></div>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">assert_studio</span><span class="p">(</span><span class="nv">game</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="nv">workspace</span><span class="p">,</span><span class="w"> </span><span class="s2">"DataModel is workspace!"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- nothing happens</span>
+</span></pre></div>
 </div>
 </div>
 </dd></dl>
@@ -351,8 +351,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">assert_studio_common Example</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">assert_studio_common</span><span class="p">(</span><span class="nv">folder</span><span class="p">)</span>
-<span class="linenos">2</span><span class="cm">--[[</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">assert_studio_common</span><span class="p">(</span><span class="nv">folder</span><span class="p">)</span>
+</span><span class="linenos">2</span><span class="cm">--[[</span>
 <span class="linenos">3</span><span class="cm">Total folder items: 1</span>
 <span class="linenos">4</span><span class="cm">]]</span>
 </pre></div>
@@ -383,8 +383,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">award_badge Example</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">award_badge</span><span class="p">(</span>
-<span class="linenos">2</span><span class="w">        </span><span class="nv">plr</span><span class="p">,</span><span class="w"> </span><span class="mf">1234567890</span><span class="p">,</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">award_badge</span><span class="p">(</span>
+</span><span class="linenos">2</span><span class="w">        </span><span class="nv">plr</span><span class="p">,</span><span class="w"> </span><span class="mf">1234567890</span><span class="p">,</span>
 <span class="linenos">3</span><span class="w">        </span><span class="p">{</span>
 <span class="linenos">4</span><span class="w">                </span><span class="s2">"Player will own badge name"</span><span class="p">,</span>
 <span class="linenos">5</span><span class="w">                </span><span class="s2">"Player already owns badge name"</span><span class="p">,</span>
@@ -416,8 +416,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">instance_creator:new Example</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">folder</span><span class="p">:</span><span class="w"> </span><span class="nc">Folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nv">instance_creator</span><span class="p">:</span><span class="nc">new</span><span class="p">(</span>
-<span class="linenos">2</span><span class="w">        </span><span class="s2">"Folder"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">folder</span><span class="p">:</span><span class="w"> </span><span class="nc">Folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nv">instance_creator</span><span class="p">:</span><span class="nc">new</span><span class="p">(</span>
+</span><span class="linenos">2</span><span class="w">        </span><span class="s2">"Folder"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">3</span><span class="w">                </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Tester"</span><span class="p">,</span>
 <span class="linenos">4</span><span class="w">                </span><span class="nv">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">workspace</span>
 <span class="linenos">5</span><span class="w">        </span><span class="p">}</span>
@@ -448,8 +448,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">GetClonedChildren Example</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">new_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">GetClonedChildren</span><span class="p">(</span><span class="nv">folder</span><span class="p">,</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nv">ReplicatedStorage</span><span class="p">)</span>
-<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">new_children</span><span class="p">)</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">new_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">GetClonedChildren</span><span class="p">(</span><span class="nv">folder</span><span class="p">,</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nv">ReplicatedStorage</span><span class="p">)</span>
+</span><span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">new_children</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -474,8 +474,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">GetClonedDescendants Example</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">new_descendants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">GetClonedDescendants</span><span class="p">(</span><span class="nv">folder</span><span class="p">,</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nv">ServerStorage</span><span class="p">)</span>
-<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">new_descendants</span><span class="p">)</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">new_descendants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">GetClonedDescendants</span><span class="p">(</span><span class="nv">folder</span><span class="p">,</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nv">ServerStorage</span><span class="p">)</span>
+</span><span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">new_descendants</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -505,8 +505,8 @@
 <span class="linenos"> 6</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nv">char</span><span class="p">.</span><span class="nv">Parent</span><span class="p">.</span><span class="nv">Parent</span><span class="p">)</span>
 <span class="linenos"> 7</span><span class="kr">end</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">player_added</span><span class="p">(</span>
-<span class="linenos">10</span><span class="w">        </span><span class="p">{</span>
+<span class="hll"><span class="linenos"> 9</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">player_added</span><span class="p">(</span>
+</span><span class="linenos">10</span><span class="w">        </span><span class="p">{</span>
 <span class="linenos">11</span><span class="w">                </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">when_plr_added</span>
 <span class="linenos">12</span><span class="w">        </span><span class="p">}</span>
 <span class="linenos">13</span><span class="p">)</span>
@@ -542,8 +542,8 @@
 <span class="linenos"> 6</span><span class="w">        </span><span class="nf">print</span><span class="p">(</span><span class="nv">hum</span><span class="p">)</span>
 <span class="linenos"> 7</span><span class="kr">end</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">character_added</span><span class="p">(</span>
-<span class="linenos">10</span><span class="w">        </span><span class="p">{</span>
+<span class="hll"><span class="linenos"> 9</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">character_added</span><span class="p">(</span>
+</span><span class="linenos">10</span><span class="w">        </span><span class="p">{</span>
 <span class="linenos">11</span><span class="w">                </span><span class="nv">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">when_char_added</span>
 <span class="linenos">12</span><span class="w">        </span><span class="p">}</span>
 <span class="linenos">13</span><span class="p">)</span>
@@ -566,8 +566,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">get_local_plr_gui Example</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">plr_gui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_plr_gui</span><span class="p">()</span>
-<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">plr_gui</span><span class="p">)</span><span class="w"> </span><span class="c1">-- PlayerGui</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">plr_gui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_plr_gui</span><span class="p">()</span>
+</span><span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">plr_gui</span><span class="p">)</span><span class="w"> </span><span class="c1">-- PlayerGui</span>
 </pre></div>
 </div>
 </div>
@@ -590,8 +590,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">get_local_char Example</span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_char</span><span class="p">()</span>
-<span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">char</span><span class="p">)</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_char</span><span class="p">()</span>
+</span><span class="linenos">2</span><span class="nf">print</span><span class="p">(</span><span class="nv">char</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -615,8 +615,8 @@
 </dl>
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text">instance_creator.new_value_object Example</span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
-<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">enemy_health</span><span class="p">:</span><span class="w"> </span><span class="nc">IntValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nv">instance_creator</span><span class="p">.</span><span class="nf">new_value_base</span><span class="p">(</span>
-<span class="linenos">2</span><span class="w">        </span><span class="s2">"IntValue"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">enemy_health</span><span class="p">:</span><span class="w"> </span><span class="nc">IntValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nv">instance_creator</span><span class="p">.</span><span class="nf">new_value_base</span><span class="p">(</span>
+</span><span class="linenos">2</span><span class="w">        </span><span class="s2">"IntValue"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">3</span><span class="w">                </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Enemy Health"</span><span class="p">,</span>
 <span class="linenos">4</span><span class="w">                </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
 <span class="linenos">5</span><span class="w">                </span><span class="nv">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">workspace</span>
@@ -917,7 +917,7 @@
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.2.0.
   </p>
 </div>
       

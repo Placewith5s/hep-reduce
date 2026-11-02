@@ -29,6 +29,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: is_studio Example
+		:emphasize-lines: 1
 
 		hep_reduce.is_studio() -- true
 
@@ -45,6 +46,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: assert_studio Example
+		:emphasize-lines: 1
 
 		hep_reduce.assert_studio(game ~= workspace, "DataModel is workspace!") -- nothing happens
 
@@ -64,6 +66,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: assert_studio_common Example
+		:emphasize-lines: 1
 
 		hep_reduce.assert_studio_common(folder)
 		--[[
@@ -87,6 +90,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: award_badge Example
+		:emphasize-lines: 1
 
 		hep_reduce.award_badge(
 			plr, 1234567890,
@@ -110,6 +114,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: instance_creator:new Example
+		:emphasize-lines: 1
 
 		local folder: Folder = hep_reduce.instance_creator:new(
 			"Folder", {
@@ -131,6 +136,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: GetClonedChildren Example
+		:emphasize-lines: 1
 
 		local new_children = hep_reduce.GetClonedChildren(folder, game.ReplicatedStorage)
 		print(new_children)
@@ -146,6 +152,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: GetClonedDescendants Example
+		:emphasize-lines: 1
 
 		local new_descendants = hep_reduce.GetClonedDescendants(folder, game.ServerStorage)
 		print(new_descendants)
@@ -160,6 +167,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: player_added Example
+		:emphasize-lines: 9
 		
 		local function when_plr_added(plr: Player)
 			print("Player added")
@@ -187,6 +195,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: character_added Example
+		:emphasize-lines: 9
 
 		local function when_char_added(char: Model)
 			print("Character added")
@@ -213,6 +222,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: get_local_plr_gui Example
+		:emphasize-lines: 1
 
 		local plr_gui = hep_reduce.get_local_plr_gui()
 		print(plr_gui) -- PlayerGui
@@ -230,6 +240,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: get_local_char Example
+		:emphasize-lines: 1
 
 		local char = hep_reduce.get_local_char()
 		print(char)
@@ -246,6 +257,7 @@ hep-reduce documentation
 	.. code-block:: luau
 		:linenos:
 		:caption: instance_creator.new_value_object Example
+		:emphasize-lines: 1
 
 		local enemy_health: IntValue = hep_reduce.instance_creator.new_value_base(
 			"IntValue", {
