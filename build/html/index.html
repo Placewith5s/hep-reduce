@@ -345,10 +345,11 @@
 <dt class="field-even">Caption<span class="colon">:</span></dt>
 <dd class="field-even"><p>INFO: debug message included for little time saving</p>
 </dd>
-<dt class="field-odd">Caution<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Does not handle whitespace for strings</p>
-</dd>
 </dl>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Does not handle whitespace for strings</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">assert_studio_common Example</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">assert_studio_common</span><span class="p">(</span><span class="nv">folder</span><span class="p">)</span>
@@ -410,10 +411,11 @@
 <li><p><strong>common.parent</strong> – The parent of the instance</p></li>
 </ul>
 </dd>
-<dt class="field-even">Note<span class="colon">:</span></dt>
-<dd class="field-even"><p>It is “:new” for this method not “.new”!</p>
-</dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is “:new” for this method not “.new”!</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">instance_creator:new Example</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">folder</span><span class="p">:</span><span class="w"> </span><span class="nc">Folder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nv">instance_creator</span><span class="p">:</span><span class="nc">new</span><span class="p">(</span>
@@ -528,10 +530,11 @@
 <dt class="field-even">Return<span class="colon">:</span></dt>
 <dd class="field-even"><p>RBXScriptConnection</p>
 </dd>
-<dt class="field-odd">Note<span class="colon">:</span></dt>
-<dd class="field-odd"><p>PlayerAdded connection returned and CharacterAdded connection not returned</p>
-</dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PlayerAdded connection returned and CharacterAdded connection not returned</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">character_added Example</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">local</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="nf">when_char_added</span><span class="p">(</span><span class="nv">char</span><span class="p">:</span><span class="w"> </span><span class="nc">Model</span><span class="p">)</span>
@@ -559,11 +562,10 @@
 <p><span class="versionmodified added">Added in version v2.5.0.</span></p>
 </div>
 <p>Getting local PlayerGui QOL</p>
-<dl class="field-list simple">
-<dt class="field-odd">Note<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Asserts / warns when used in a server script</p>
-</dd>
-</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Asserts / warns when used in a server script</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">get_local_plr_gui Example</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">plr_gui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_plr_gui</span><span class="p">()</span>
@@ -584,10 +586,11 @@
 <dt class="field-odd">Return<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Model</p>
 </dd>
-<dt class="field-even">Note<span class="colon">:</span></dt>
-<dd class="field-even"><p>Asserts / warns when used in a server script</p>
-</dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Asserts / warns when used in a server script</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">get_local_char Example</span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
 <div class="highlight-luau notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kd">local</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">hep_reduce</span><span class="p">.</span><span class="nf">get_local_char</span><span class="p">()</span>
