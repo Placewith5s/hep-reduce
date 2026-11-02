@@ -61,7 +61,8 @@ hep-reduce documentation
 	:param get_descendants: The method used for folders. Defaults to GetChildren()
 
 	:caption: INFO: debug message included for little time saving
-	:caution: Does not handle whitespace for strings
+
+	.. caution:: Does not handle whitespace for strings
 
 	.. code-block:: luau
 		:linenos:
@@ -109,7 +110,7 @@ hep-reduce documentation
 	:param common.name: The name of the instance
 	:param common.parent: The parent of the instance
 
-	:note: It is ":new" for this method not ".new"!
+	.. note:: It is ":new" for this method not ".new"!
 
 	.. code-block:: luau
 		:linenos:
@@ -190,7 +191,7 @@ hep-reduce documentation
 	:param args.func: The function to call inside CharacterAdded:Connect()
 	:return: RBXScriptConnection
 
-	:note: PlayerAdded connection returned and CharacterAdded connection not returned
+	.. note:: PlayerAdded connection returned and CharacterAdded connection not returned
 
 	.. code-block:: luau
 		:linenos:
@@ -217,7 +218,7 @@ hep-reduce documentation
 
 	Getting local PlayerGui QOL
 
-	:note: Asserts / warns when used in a server script
+	.. note:: Asserts / warns when used in a server script
 
 	.. code-block:: luau
 		:linenos:
@@ -235,7 +236,7 @@ hep-reduce documentation
 
 	:return: Model
 
-	:note: Asserts / warns when used in a server script
+	.. note:: Asserts / warns when used in a server script
 
 	.. code-block:: luau
 		:linenos:
